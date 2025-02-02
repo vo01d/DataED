@@ -1,37 +1,29 @@
-﻿using DataED.Commands;
-using DataED.Utils;
+﻿using DataED.ApplicationLayer;
+using DataED.PresentationLayer;
+using DataED.PresentationLayer.Commands;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DataED {
     class Program {
         static void Main(string[] args) {
-            var invoker = new Invoker();
+            IServiceCollection services = new ServiceCollection();
 
-            invoker
-                .AddCommand(new ConsoleAESEncryptionCommand("Encryption", "Encrypt console input"))
-                .AddCommand(new AESDecryptionCommand("Decryption", "Decrypt file"));
+            services.AddSingleton<Invoker>();
+            services.AddTransient<ICryptoService, CryptoService>();
+            services.AddTransient<UIHandler>();
 
-            ConsoleOutputHelper.WriteCommandsMenu(invoker.Commands);
-            Console.WriteLine();
+            var serviceProvider = services.BuildServiceProvider();
 
-            while (true) {
-                Console.Write("Enter command number: ");
-                string userInput = Console.ReadLine() ?? throw new ArgumentNullException();
+            var cryptoService = serviceProvider.GetRequiredService<ICryptoService>();
+            var invoker = serviceProvider.GetRequiredService<Invoker>()
+                .AddCommand(new AESConsoleEncryptAndSaveToFileCommand("Encrypt console input using AES and save to a file", cryptoService))
+                .AddCommand(new AESDecryptFromFileCommand("Decrypt an AES-encrypted file and display the output", cryptoService))
+                .AddCommand(new RSAConsoleEncryptWithNewKeysAndSaveToFileCommand("Generate new RSA keys and encrypt console input", cryptoService))
+                .AddCommand(new RSAConsoleEncryptWithExistKeyAndSaveToFileCommand("Encrypt console input using an existing RSA public key", cryptoService))
+                .AddCommand(new RSADecryptFromFileCommand("Decrypt an RSA-encrypted file using the private key and display the output", cryptoService));
 
-                int queryNumber;
-                try {
-                    queryNumber = InputValidationHelper.ValidateInt32InRange(userInput, 1, invoker.CommandsCount);
-                }
-                catch (FormatException) {
-                    Console.WriteLine("Invalid input! Please enter a valid integer.");
-                    continue;
-                }
-                catch (Exception ex) when (ex is ArgumentOutOfRangeException || ex is OverflowException) {
-                    Console.WriteLine($"Unknown command! Please enter a number in range from 1 to {invoker.CommandsCount}.");
-                    continue;
-                }
-
-                invoker.ExecuteCommand(queryNumber);
-            }
+            var UIHandler = serviceProvider.GetRequiredService<UIHandler>();
+            UIHandler.Start();
         }
     }
 }
