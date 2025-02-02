@@ -1,6 +1,6 @@
-﻿using DataED.Commands;
+﻿using DataED.PresentationLayer.Commands;
 
-namespace DataED {
+namespace DataED.PresentationLayer {
     class Invoker {
         public List<Command> Commands { get; } = [];
         public int CommandsCount => Commands.Count;
