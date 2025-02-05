@@ -1,7 +1,7 @@
 ﻿using DataED.PresentationLayer.Commands;
 
 namespace DataED.PresentationLayer {
-    class Invoker {
+    public class Invoker {
         public List<Command> Commands { get; } = [];
         public int CommandsCount => Commands.Count;
 

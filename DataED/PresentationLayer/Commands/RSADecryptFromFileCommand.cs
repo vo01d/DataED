@@ -1,7 +1,7 @@
 ﻿using DataED.ApplicationLayer;
 
 namespace DataED.PresentationLayer.Commands {
-    class RSADecryptFromFileCommand : CryptoCommand {
+    public class RSADecryptFromFileCommand : CryptoCommand {
         public RSADecryptFromFileCommand(string name, ICryptoService cryptoService) : base(name, cryptoService) {
         }
 

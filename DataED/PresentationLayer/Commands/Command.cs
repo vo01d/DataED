@@ -1,5 +1,5 @@
 ﻿namespace DataED.PresentationLayer.Commands {
-    abstract class Command {
+    public abstract class Command {
         public string Name { get; }
 
         protected Command(string name) {

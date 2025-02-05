@@ -2,7 +2,7 @@
 using System.Text;
 
 namespace DataED.ApplicationLayer {
-    class CryptoService : ICryptoService {
+    public class CryptoService : ICryptoService {
         public void AESEncryptAndSaveToFile(string plaintext, string toStoreKeyFilePath, string encryptedFilePath) {
             if (string.IsNullOrWhiteSpace(plaintext)) {
                 throw new ArgumentException("The plaintext to encrypt cannot be null or empty.", nameof(plaintext));
@@ -16,10 +16,11 @@ namespace DataED.ApplicationLayer {
                 throw new ArgumentException("The encrypted file path must be a valid, non-empty string.", nameof(encryptedFilePath));
             }
 
-            using var fileStream = new FileStream(encryptedFilePath, FileMode.Create);
             using var aes = Aes.Create();
 
             File.WriteAllBytes(toStoreKeyFilePath, aes.Key);
+
+            using var fileStream = new FileStream(encryptedFilePath, FileMode.Create);
             fileStream.Write(aes.IV, 0, aes.IV.Length);
 
             using var cryptoStream = new CryptoStream(fileStream, aes.CreateEncryptor(), CryptoStreamMode.Write);
@@ -37,8 +38,9 @@ namespace DataED.ApplicationLayer {
                 throw new ArgumentException("The key file path must be a valid, non-empty string.", nameof(keyFilePath));
             }
 
-            using var fileStream = new FileStream(encryptedFilePath, FileMode.Open);
             using var aes = Aes.Create();
+
+            using var fileStream = new FileStream(encryptedFilePath, FileMode.Open);
 
             byte[] iv = new byte[aes.IV.Length];
             int numBytesToRead = aes.IV.Length;
