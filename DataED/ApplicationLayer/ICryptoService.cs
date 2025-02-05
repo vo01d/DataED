@@ -1,5 +1,5 @@
 ﻿namespace DataED.ApplicationLayer {
-    interface ICryptoService {
+    public interface ICryptoService {
         void AESEncryptAndSaveToFile(string plaintext, string toStoreKeyFilePath, string encryptedFilePath);
         string AESDecryptFromFile(string encryptedFilePath, string keyFilePath);
         void RSAEncryptWithNewKeysAndSaveToFile(string plaintext, string toStorePrivateKeyFilePath, string toStorePublicKeyFilePath, string encryptedFilePath);

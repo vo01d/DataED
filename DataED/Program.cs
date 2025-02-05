@@ -4,13 +4,13 @@ using DataED.PresentationLayer.Commands;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataED {
-    class Program {
+    public class Program {
         static void Main(string[] args) {
             IServiceCollection services = new ServiceCollection();
 
             services.AddSingleton<Invoker>();
-            services.AddTransient<ICryptoService, CryptoService>();
-            services.AddTransient<UIHandler>();
+            services.AddSingleton<ICryptoService, CryptoService>();
+            services.AddSingleton<UIHandler>();
 
             var serviceProvider = services.BuildServiceProvider();
 

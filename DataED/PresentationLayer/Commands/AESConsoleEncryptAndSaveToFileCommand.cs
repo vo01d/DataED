@@ -1,7 +1,7 @@
 ﻿using DataED.ApplicationLayer;
 
 namespace DataED.PresentationLayer.Commands {
-    class AESConsoleEncryptAndSaveToFileCommand : CryptoCommand {
+    public class AESConsoleEncryptAndSaveToFileCommand : CryptoCommand {
         public AESConsoleEncryptAndSaveToFileCommand(string name, ICryptoService cryptoService) : base(name, cryptoService) {
         }
 

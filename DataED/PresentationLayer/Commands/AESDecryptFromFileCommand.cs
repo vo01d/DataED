@@ -1,7 +1,7 @@
 ﻿using DataED.ApplicationLayer;
 
 namespace DataED.PresentationLayer.Commands {
-    class AESDecryptFromFileCommand : CryptoCommand  {
+    public class AESDecryptFromFileCommand : CryptoCommand  {
         public AESDecryptFromFileCommand(string name, ICryptoService cryptoService) : base(name, cryptoService) {
         }
 

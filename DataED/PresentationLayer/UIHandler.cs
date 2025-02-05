@@ -1,7 +1,7 @@
 ﻿using DataED.Utils;
 
 namespace DataED.PresentationLayer {
-    class UIHandler {
+    public class UIHandler {
         private readonly Invoker _invoker;
         public UIHandler(Invoker invoker) {
             _invoker = invoker;
@@ -16,7 +16,7 @@ namespace DataED.PresentationLayer {
 
                 int queryNumber;
                 try {
-                    queryNumber = InputValidationHelper.ValidateInt32InRange(userInput, 1, _invoker.CommandsCount);
+                    queryNumber = ToInt32Parser.ParseInRange(userInput, 1, _invoker.CommandsCount);
                 }
                 catch (FormatException) {
                     Console.WriteLine("Invalid input! Please enter a valid integer.");

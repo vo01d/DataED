@@ -1,7 +1,7 @@
 ﻿using DataED.ApplicationLayer;
 
 namespace DataED.PresentationLayer.Commands {
-    class RSAConsoleEncryptWithNewKeysAndSaveToFileCommand : CryptoCommand {
+    public class RSAConsoleEncryptWithNewKeysAndSaveToFileCommand : CryptoCommand {
         public RSAConsoleEncryptWithNewKeysAndSaveToFileCommand(string name, ICryptoService cryptoService) : base(name, cryptoService) {
         }
 
