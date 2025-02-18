@@ -1,6 +1,7 @@
 using DataED.Utils;
 
 namespace DataEDNUnitTests {
+    [TestFixture]
     public class ToInt32Parser_Tests {
         // Parse()
         [Test]

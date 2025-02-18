@@ -14,7 +14,16 @@ namespace DataED.PresentationLayer.Commands {
             string encryptedFilePath = Console.ReadLine() ?? throw new ArgumentNullException(nameof(encryptedFilePath),
                 "The encrypted data filepath cannot be null.");
 
-            Console.WriteLine($"Plain text: {_cryptoService.AESDecryptFromFile(encryptedFilePath, keyFilePath)}");
+            string decrypted = string.Empty;
+            try {
+                decrypted = _cryptoService.AESDecryptFromFile(encryptedFilePath, keyFilePath);
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+                return;
+            }
+
+            Console.WriteLine($"Plain text: {decrypted}");
         }
     }
 }

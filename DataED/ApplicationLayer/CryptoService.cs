@@ -3,125 +3,116 @@ using System.Text;
 
 namespace DataED.ApplicationLayer {
     public class CryptoService : ICryptoService {
-        public void AESEncryptAndSaveToFile(string plaintext, string toStoreKeyFilePath, string encryptedFilePath) {
+        private IFileService _fileService;
+
+        public CryptoService(IFileService fileService) {
+            _fileService = fileService;
+        }
+
+        public void AESEncryptAndSaveToFile(string plaintext, string keyFilePath, string encryptedFilePath) {
             if (string.IsNullOrWhiteSpace(plaintext)) {
-                throw new ArgumentException("The plaintext to encrypt cannot be null or empty.", nameof(plaintext));
+                throw new ArgumentException("Plaintext for encryption cannot be null, empty, or consist only of whitespace.", nameof(plaintext));
             }
 
-            if (!File.Exists(toStoreKeyFilePath)) {
-                throw new ArgumentException("The key file path must be a valid, non-empty string.", nameof(toStoreKeyFilePath));
+            if (!_fileService.Exists(keyFilePath)) {
+                throw new ArgumentException("The key file was not found at the specified path or the path is invalid.", nameof(keyFilePath));
             }
 
-            if (!File.Exists(encryptedFilePath)) {
-                throw new ArgumentException("The encrypted file path must be a valid, non-empty string.", nameof(encryptedFilePath));
+            if (!_fileService.Exists(encryptedFilePath)) {
+                throw new ArgumentException("The encrypted file was not found at the specified path or the path is invalid.", nameof(encryptedFilePath));
             }
 
             using var aes = Aes.Create();
 
-            File.WriteAllBytes(toStoreKeyFilePath, aes.Key);
+            using var encryptor = aes.CreateEncryptor();
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(plaintext); 
+            byte[] encrypted = encryptor.TransformFinalBlock(plainTextBytes, 0, plainTextBytes.Length);
 
-            using var fileStream = new FileStream(encryptedFilePath, FileMode.Create);
-            fileStream.Write(aes.IV, 0, aes.IV.Length);
-
-            using var cryptoStream = new CryptoStream(fileStream, aes.CreateEncryptor(), CryptoStreamMode.Write);
-            using var writer = new StreamWriter(cryptoStream);
-
-            writer.Write(plaintext);
+            _fileService.WriteAllBytes(keyFilePath, aes.Key); 
+            _fileService.WriteAllBytes(encryptedFilePath, [.. aes.IV, .. encrypted]);
         }
 
         public string AESDecryptFromFile(string encryptedFilePath, string keyFilePath) {
-            if (!File.Exists(encryptedFilePath)) {
-                throw new ArgumentException("The encrypted file path must be a valid, non-empty string.", nameof(encryptedFilePath));
+            if (!_fileService.Exists(encryptedFilePath)) {
+                throw new ArgumentException("The encrypted file was not found at the specified path or the path is invalid.", nameof(encryptedFilePath));
             }
 
-            if (!File.Exists(keyFilePath)) {
-                throw new ArgumentException("The key file path must be a valid, non-empty string.", nameof(keyFilePath));
+            if (!_fileService.Exists(keyFilePath)) {
+                throw new ArgumentException("The key file was not found at the specified path or the path is invalid.", nameof(keyFilePath));
             }
 
             using var aes = Aes.Create();
 
-            using var fileStream = new FileStream(encryptedFilePath, FileMode.Open);
+            byte[] key = File.ReadAllBytes(keyFilePath); 
+            byte[] encryptedFileData = File.ReadAllBytes(encryptedFilePath);
+            byte[] IV = encryptedFileData.Take(aes.IV.Length).ToArray();
+            byte[] encrypted = encryptedFileData.Skip(aes.IV.Length).ToArray();
+            
+            using var decryptor = aes.CreateDecryptor(key, IV);
+            byte[] decrypted = decryptor.TransformFinalBlock(encrypted, 0, encrypted.Length);
 
-            byte[] iv = new byte[aes.IV.Length];
-            int numBytesToRead = aes.IV.Length;
-            int numBytesRead = 0;
-            while (numBytesToRead > 0) {
-                int n = fileStream.Read(iv, numBytesRead, numBytesToRead);
-                if (n == 0) {
-                    break;
-                }
-
-                numBytesRead += n;
-                numBytesToRead -= n;
-            }
-
-            byte[] key = File.ReadAllBytes(keyFilePath);
-
-            using CryptoStream cryptoStream = new(fileStream, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read);
-            using StreamReader decryptReader = new(cryptoStream);
-
-            return decryptReader.ReadToEnd();
+            return Encoding.UTF8.GetString(decrypted);
         }
 
-        public void RSAEncryptWithNewKeysAndSaveToFile(string plaintext, string toStorePrivateKeyFilePath, string toStorePublicKeyFilePath, string encryptedFilePath) {
+        public void RSAEncryptWithNewKeysAndSaveToFile(string plaintext, string privateKeyFilePath, string publicKeyFilePath, string encryptedFilePath) {
             if (string.IsNullOrWhiteSpace(plaintext)) {
-                throw new ArgumentException("The plaintext to encrypt cannot be null or empty.", nameof(plaintext));
+                throw new ArgumentException("Plaintext for encryption cannot be null, empty, or consist only of whitespace.", nameof(plaintext));
             }
 
-            if (!File.Exists(toStorePrivateKeyFilePath)) {
-                throw new ArgumentException("The private key file path must be a valid, non-empty string.", nameof(toStorePrivateKeyFilePath));
+            if (!_fileService.Exists(privateKeyFilePath)) {
+                throw new ArgumentException("The private key file was not found at the specified path or the path is invalid.", nameof(privateKeyFilePath));
             }
 
-            if (!File.Exists(toStorePublicKeyFilePath)) {
-                throw new ArgumentException("The public key file path must be a valid, non-empty string.", nameof(toStorePublicKeyFilePath));
+            if (!_fileService.Exists(publicKeyFilePath)) {
+                throw new ArgumentException("The public key file was not found at the specified path or the path is invalid.", nameof(publicKeyFilePath));
             }
 
-            if (!File.Exists(encryptedFilePath)) {
-                throw new ArgumentException("The encrypted file path must be a valid, non-empty string.", nameof(encryptedFilePath));
+            if (!_fileService.Exists(encryptedFilePath)) {
+                throw new ArgumentException("The encrypted file was not found at the specified path or the path is invalid.", nameof(encryptedFilePath));
             }
 
             using var rsa = RSA.Create();
 
-            File.WriteAllBytes(toStorePrivateKeyFilePath, rsa.ExportRSAPrivateKey());
-            File.WriteAllBytes(toStorePublicKeyFilePath, rsa.ExportRSAPublicKey());
+            _fileService.WriteAllBytes(privateKeyFilePath, rsa.ExportRSAPrivateKey());
+            _fileService.WriteAllBytes(publicKeyFilePath, rsa.ExportRSAPublicKey());
 
             byte[] encryptedData = rsa.Encrypt(Encoding.UTF8.GetBytes(plaintext), RSAEncryptionPadding.Pkcs1);
-            File.WriteAllBytes(encryptedFilePath, encryptedData);
+            _fileService.WriteAllBytes(encryptedFilePath, encryptedData);
         }
 
         public void RSAEncryptWithExistKeyAndSaveToFile(string plaintext, string publicKeyFilePath, string encryptedFilePath) {
             if (string.IsNullOrWhiteSpace(plaintext)) {
-                throw new ArgumentException("The plaintext to encrypt cannot be null or empty.", nameof(plaintext));
+                throw new ArgumentException("Plaintext for encryption cannot be null, empty, or consist only of whitespace.", nameof(plaintext));
             }
 
-            if (!File.Exists(publicKeyFilePath)) {
-                throw new ArgumentException("The public key file path must be a valid, non-empty string.", nameof(publicKeyFilePath));
+            if (!_fileService.Exists(publicKeyFilePath)) {
+                throw new ArgumentException("The public key file was not found at the specified path or the path is invalid.", nameof(publicKeyFilePath));
             }
 
-            if (!File.Exists(encryptedFilePath)) {
-                throw new ArgumentException("The encrypted file path must be a valid, non-empty string.", nameof(encryptedFilePath));
+            if (!_fileService.Exists(encryptedFilePath)) {
+                throw new ArgumentException("The encrypted file was not found at the specified path or the path is invalid.", nameof(encryptedFilePath));
             }
 
             using var rsa = RSA.Create();
-            rsa.ImportRSAPublicKey(File.ReadAllBytes(publicKeyFilePath), out _);
+            rsa.ImportRSAPublicKey(_fileService.ReadAllBytes(publicKeyFilePath), out _);
 
             byte[] encryptedData = rsa.Encrypt(Encoding.UTF8.GetBytes(plaintext), RSAEncryptionPadding.Pkcs1);
-            File.WriteAllBytes(encryptedFilePath, encryptedData);
+            _fileService.WriteAllBytes(encryptedFilePath, encryptedData);
         }
 
         public string RSADecryptFromFile(string encryptedFilePath, string privateKeyFilePath) {
-            if (!File.Exists(encryptedFilePath)) {
-                throw new ArgumentException("The encrypted file path must be a valid, non-empty string.", nameof(encryptedFilePath));
+            if (!_fileService.Exists(encryptedFilePath)) {
+                throw new ArgumentException("The encrypted file was not found at the specified path or the path is invalid.", nameof(encryptedFilePath));
             }
 
-            if (!File.Exists(privateKeyFilePath)) {
-                throw new ArgumentException("The private key file path must be a valid, non-empty string.", nameof(privateKeyFilePath));
+            if (!_fileService.Exists(privateKeyFilePath)) {
+                throw new ArgumentException("The private key file was not found at the specified path or the path is invalid.", nameof(privateKeyFilePath));
             }
 
             using var rsa = RSA.Create();
-            rsa.ImportRSAPrivateKey(File.ReadAllBytes(privateKeyFilePath), out _);
+            rsa.ImportRSAPrivateKey(_fileService.ReadAllBytes(privateKeyFilePath), out _);
 
-            byte[] encryptedData = File.ReadAllBytes(encryptedFilePath);
+            byte[] encryptedData = _fileService.ReadAllBytes(encryptedFilePath);
             byte[] decryptedData = rsa.Decrypt(encryptedData, RSAEncryptionPadding.Pkcs1);
 
             return Encoding.UTF8.GetString(decryptedData);

@@ -1,8 +1,8 @@
 ﻿using DataED.ApplicationLayer;
 
 namespace DataED.PresentationLayer.Commands {
-    public class AESConsoleEncryptAndSaveToFileCommand : CryptoCommand {
-        public AESConsoleEncryptAndSaveToFileCommand(string name, ICryptoService cryptoService) : base(name, cryptoService) {
+    public class AESEncryptAndSaveToFileCommand : CryptoCommand {
+        public AESEncryptAndSaveToFileCommand(string name, ICryptoService cryptoService) : base(name, cryptoService) {
         }
 
         public override void Execute() {
@@ -18,7 +18,12 @@ namespace DataED.PresentationLayer.Commands {
             string encryptedFilePath = Console.ReadLine() ?? throw new ArgumentNullException(nameof(encryptedFilePath),
                 "The encrypted data filepath cannot be null.");
 
-            _cryptoService.AESEncryptAndSaveToFile(plaintext, keyFilePath, encryptedFilePath);
+            try {
+                _cryptoService.AESEncryptAndSaveToFile(plaintext, keyFilePath, encryptedFilePath);
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
