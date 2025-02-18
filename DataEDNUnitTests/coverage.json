@@ -1,0 +1,1005 @@
+{
+  "DataED.dll": {
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\Program.cs": {
+      "DataED.Program": {
+        "System.Void DataED.Program::Main(System.String[])": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\Utils\\ConsoleOutputHelper.cs": {
+      "DataED.Utils.ConsoleOutputHelper": {
+        "System.Void DataED.Utils.ConsoleOutputHelper::WriteCommandsMenu(System.Collections.Generic.IEnumerable`1<DataED.PresentationLayer.Commands.Command>)": {
+          "Lines": {
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0
+          },
+          "Branches": [
+            {
+              "Line": 7,
+              "Offset": 144,
+              "EndOffset": 58,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 7,
+              "Offset": 144,
+              "EndOffset": 146,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\Utils\\ToInt32Parser.cs": {
+      "DataED.Utils.ToInt32Parser": {
+        "System.Int32 DataED.Utils.ToInt32Parser::Parse(System.String)": {
+          "Lines": {
+            "3": 15,
+            "4": 15,
+            "5": 11
+          },
+          "Branches": []
+        },
+        "System.Int32 DataED.Utils.ToInt32Parser::ParseInRange(System.String,System.Int32,System.Int32)": {
+          "Lines": {
+            "7": 4,
+            "8": 5,
+            "9": 1,
+            "12": 3,
+            "13": 5,
+            "14": 2,
+            "17": 1,
+            "18": 1
+          },
+          "Branches": [
+            {
+              "Line": 8,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 8,
+              "Offset": 7,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 13,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 13,
+              "Offset": 30,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 13,
+              "Offset": 41,
+              "EndOffset": 43,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 13,
+              "Offset": 41,
+              "EndOffset": 124,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\Invoker.cs": {
+      "DataED.PresentationLayer.Invoker": {
+        "System.Collections.Generic.List`1<DataED.PresentationLayer.Commands.Command> DataED.PresentationLayer.Invoker::get_Commands()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 DataED.PresentationLayer.Invoker::get_CommandsCount()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "DataED.PresentationLayer.Invoker DataED.PresentationLayer.Invoker::AddCommand(DataED.PresentationLayer.Commands.Command)": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Void DataED.PresentationLayer.Invoker::ExecuteCommand(System.Int32)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\UIHandler.cs": {
+      "DataED.PresentationLayer.UIHandler": {
+        "System.Void DataED.PresentationLayer.UIHandler::Start()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": [
+            {
+              "Line": 15,
+              "Offset": 47,
+              "EndOffset": 49,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 47,
+              "EndOffset": 56,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void DataED.PresentationLayer.UIHandler::.ctor(DataED.PresentationLayer.Invoker)": {
+          "Lines": {
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\Commands\\AESDecryptFromFileCommand.cs": {
+      "DataED.PresentationLayer.Commands.AESDecryptFromFileCommand": {
+        "System.Void DataED.PresentationLayer.Commands.AESDecryptFromFileCommand::Execute()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void DataED.PresentationLayer.Commands.AESDecryptFromFileCommand::.ctor(System.String,DataED.ApplicationLayer.ICryptoService)": {
+          "Lines": {
+            "5": 0,
+            "6": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\Commands\\AESEncryptAndSaveToFileCommand.cs": {
+      "DataED.PresentationLayer.Commands.AESEncryptAndSaveToFileCommand": {
+        "System.Void DataED.PresentationLayer.Commands.AESEncryptAndSaveToFileCommand::Execute()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 92,
+              "EndOffset": 94,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 92,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void DataED.PresentationLayer.Commands.AESEncryptAndSaveToFileCommand::.ctor(System.String,DataED.ApplicationLayer.ICryptoService)": {
+          "Lines": {
+            "5": 0,
+            "6": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\Commands\\Command.cs": {
+      "DataED.PresentationLayer.Commands.Command": {
+        "System.String DataED.PresentationLayer.Commands.Command::get_Name()": {
+          "Lines": {
+            "3": 0
+          },
+          "Branches": []
+        },
+        "System.Void DataED.PresentationLayer.Commands.Command::.ctor(System.String)": {
+          "Lines": {
+            "5": 0,
+            "6": 0,
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\Commands\\CryptoCommand.cs": {
+      "DataED.PresentationLayer.Commands.CryptoCommand": {
+        "System.Void DataED.PresentationLayer.Commands.CryptoCommand::.ctor(System.String,DataED.ApplicationLayer.ICryptoService)": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\Commands\\RSADecryptFromFileCommand.cs": {
+      "DataED.PresentationLayer.Commands.RSADecryptFromFileCommand": {
+        "System.Void DataED.PresentationLayer.Commands.RSADecryptFromFileCommand::Execute()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void DataED.PresentationLayer.Commands.RSADecryptFromFileCommand::.ctor(System.String,DataED.ApplicationLayer.ICryptoService)": {
+          "Lines": {
+            "5": 0,
+            "6": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\Commands\\RSAEncryptWithExistKeyAndSaveToFileCommand.cs": {
+      "DataED.PresentationLayer.Commands.RSAEncryptWithExistKeyAndSaveToFileCommand": {
+        "System.Void DataED.PresentationLayer.Commands.RSAEncryptWithExistKeyAndSaveToFileCommand::Execute()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 92,
+              "EndOffset": 94,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 92,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void DataED.PresentationLayer.Commands.RSAEncryptWithExistKeyAndSaveToFileCommand::.ctor(System.String,DataED.ApplicationLayer.ICryptoService)": {
+          "Lines": {
+            "5": 0,
+            "6": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\PresentationLayer\\Commands\\RSAEncryptWithNewKeysAndSaveToFileCommand.cs": {
+      "DataED.PresentationLayer.Commands.RSAEncryptWithNewKeysAndSaveToFileCommand": {
+        "System.Void DataED.PresentationLayer.Commands.RSAEncryptWithNewKeysAndSaveToFileCommand::Execute()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 55,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 92,
+              "EndOffset": 94,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 92,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 129,
+              "EndOffset": 131,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 129,
+              "EndOffset": 148,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void DataED.PresentationLayer.Commands.RSAEncryptWithNewKeysAndSaveToFileCommand::.ctor(System.String,DataED.ApplicationLayer.ICryptoService)": {
+          "Lines": {
+            "5": 0,
+            "6": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\ApplicationLayer\\CryptoService.cs": {
+      "DataED.ApplicationLayer.CryptoService": {
+        "System.Void DataED.ApplicationLayer.CryptoService::AESEncryptAndSaveToFile(System.String,System.String,System.String)": {
+          "Lines": {
+            "12": 5,
+            "13": 7,
+            "14": 2,
+            "17": 4,
+            "18": 1,
+            "21": 3,
+            "22": 1,
+            "25": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "31": 1,
+            "32": 1,
+            "33": 2
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 13,
+              "Offset": 11,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 17,
+              "Offset": 49,
+              "EndOffset": 51,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 17,
+              "Offset": 49,
+              "EndOffset": 68,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 21,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 21,
+              "Offset": 87,
+              "EndOffset": 106,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.String DataED.ApplicationLayer.CryptoService::AESDecryptFromFile(System.String,System.String)": {
+          "Lines": {
+            "35": 3,
+            "36": 4,
+            "37": 1,
+            "40": 3,
+            "41": 1,
+            "44": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "54": 1,
+            "55": 1
+          },
+          "Branches": [
+            {
+              "Line": 36,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 36,
+              "Offset": 20,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 40,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 40,
+              "Offset": 58,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void DataED.ApplicationLayer.CryptoService::RSAEncryptWithNewKeysAndSaveToFile(System.String,System.String,System.String,System.String)": {
+          "Lines": {
+            "57": 6,
+            "58": 8,
+            "59": 2,
+            "62": 5,
+            "63": 1,
+            "66": 4,
+            "67": 1,
+            "70": 3,
+            "71": 1,
+            "74": 1,
+            "76": 1,
+            "77": 1,
+            "79": 1,
+            "80": 1,
+            "81": 2
+          },
+          "Branches": [
+            {
+              "Line": 58,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 58,
+              "Offset": 9,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 62,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 62,
+              "Offset": 45,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 66,
+              "Offset": 83,
+              "EndOffset": 85,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 66,
+              "Offset": 83,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 70,
+              "Offset": 122,
+              "EndOffset": 124,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 70,
+              "Offset": 122,
+              "EndOffset": 141,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void DataED.ApplicationLayer.CryptoService::RSAEncryptWithExistKeyAndSaveToFile(System.String,System.String,System.String)": {
+          "Lines": {
+            "83": 5,
+            "84": 7,
+            "85": 2,
+            "88": 4,
+            "89": 1,
+            "92": 3,
+            "93": 1,
+            "96": 1,
+            "97": 1,
+            "99": 1,
+            "100": 1,
+            "101": 2
+          },
+          "Branches": [
+            {
+              "Line": 84,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 84,
+              "Offset": 9,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 88,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 88,
+              "Offset": 45,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 92,
+              "Offset": 83,
+              "EndOffset": 85,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 92,
+              "Offset": 83,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.String DataED.ApplicationLayer.CryptoService::RSADecryptFromFile(System.String,System.String)": {
+          "Lines": {
+            "103": 4,
+            "104": 5,
+            "105": 1,
+            "108": 4,
+            "109": 1,
+            "112": 2,
+            "113": 2,
+            "115": 2,
+            "116": 2,
+            "118": 2,
+            "119": 2
+          },
+          "Branches": [
+            {
+              "Line": 104,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 104,
+              "Offset": 18,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 108,
+              "Offset": 56,
+              "EndOffset": 58,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 108,
+              "Offset": 56,
+              "EndOffset": 75,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void DataED.ApplicationLayer.CryptoService::.ctor(DataED.ApplicationLayer.IFileService)": {
+          "Lines": {
+            "8": 30,
+            "9": 15,
+            "10": 15
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\DataED\\DataED\\ApplicationLayer\\FileService.cs": {
+      "DataED.ApplicationLayer.FileService": {
+        "System.Boolean DataED.ApplicationLayer.FileService::Exists(System.String)": {
+          "Lines": {
+            "3": 31,
+            "4": 31,
+            "5": 31
+          },
+          "Branches": []
+        },
+        "System.Void DataED.ApplicationLayer.FileService::WriteAllBytes(System.String,System.Byte[])": {
+          "Lines": {
+            "7": 8,
+            "8": 8,
+            "9": 8
+          },
+          "Branches": []
+        },
+        "System.Byte[] DataED.ApplicationLayer.FileService::ReadAllBytes(System.String)": {
+          "Lines": {
+            "11": 5,
+            "12": 5,
+            "13": 5
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
