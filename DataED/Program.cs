@@ -2,14 +2,16 @@
 using DataED.PresentationLayer;
 using DataED.PresentationLayer.Commands;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO.Abstractions;
 
 namespace DataED {
     public class Program {
         static void Main(string[] args) {
             IServiceCollection services = new ServiceCollection(); 
-        
+
             services.AddSingleton<Invoker>();
-            services.AddTransient<IFileService, FileService>();
+            services.AddTransient<IFileSystem, FileSystem>();
+            services.AddTransient<IFile, FileWrapper>();
             services.AddTransient<ICryptoService, CryptoService>();
             services.AddSingleton<UIHandler>();
 
